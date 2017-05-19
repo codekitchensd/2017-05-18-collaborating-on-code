@@ -129,7 +129,16 @@ There are a lot of things that fall under this title!
 
 ### What do you do for DevOps? 
 
-_…_
+- Try to use tools that are as cross-platform as possible, so that if you have to develop on a different system, you're not introducing new changes in the configuration. (Try to keep things the same as possible!)
+- Use tests more. (Want to learn more about it!)
+- If you have a time-dependent project that is long running, use a cron job to take screenshots throughout the day so that you don't have to watch it throughout the day.
+- Use stable releases of open source libraries.
+- Use submodules.
+- Don't use git for games...or at least not for binary files. It's hard to remove something from your repo! If you accidentally commit a .PSD, it's still in your history even if you delete it, and it's hard to get rid of. If you can serialize things as text, do so. Be aware of the size limit of your repo; unlike SVN or Perforce, git does not do _deltas_ of binary files, nor file-locking (which is also useful for binary files). Git is really popular, but it's not the best for everything. (SVN is simpler for non-coders.)
+- What if you don't want a public git repo site? GitHub is a service that does have private, but it charges. There's also GitLab (which you can install on a server, and it looks a lot like GitHub) and they also have a hosted service, as does BitBucket.
+- Git UI clients: GitHub Desktop app, TortoiseGit, SourceTree, Tower (for Mac), GitKraken, GitGUI?
+- Diff tools: BeyondCompare, TortoiseSVN's diff tool, WinMerge?, Kaleidoscope (for Mac)
+- `gitk` on Mac Terminal command line
 
 ### Further Resources
 
