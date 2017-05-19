@@ -6,7 +6,7 @@ What are we talking about tonight?
 - Learning the vocabulary and basics of git and github
 - Discussing about git workflow
 - Discussing DevOps (and why you care)
-- Discussing best practices for project documentation _(if time!)_
+- ~~Discussing best practices for project documentation _(if time!)_~~
 
 
 
@@ -45,14 +45,14 @@ Let's think about version control with a _A Brief, Very Inaccurate History Of Ho
    - OR, do a Pull Request (PR), which is requesting that the central repo pull from your local repo to update its code
 
 Git is the name of a popular decentralized version control system / tool. 
-​(:warning: It's an awkward name, because it's a slur in the UK.) 
+​(:warning: It's an awkward name, because it's a [slur in the UK](https://en.wikipedia.org/wiki/Git_(slang)).) 
 It's often run on the command line, and there are fancier user interfaces for it. 
 
 If the code you're working on is open source, you can host it for free in repos on sites like [GitHub](https://github.com/) (where you're reading this now). The GitHub site will let you edit files online, and even drag and drop files to the browser to upload them or update them.
 
 GitHub is handy because it hosts so many open source projects! You can search GitHub to find code that can help you on a project, and if you write code, it's easy to share what projects you've contributed to, and build up a kind of coding resume. 
 
-GitHub also makes it easy to document your code with a markdown `README.md` file (like this one), or host web pages for each of your projects. You can upload static HTML files along with your code, or set up a more dynamic blog using the Jekyll content management system. (In fact, [codekitchen.club](http://codekitchen.club/) is [hosted on GitHub](https://github.com/codekitchensd/codekitchensd.github.io)!)
+GitHub also makes it easy to document your code with a [Markdown](https://guides.github.com/features/mastering-markdown/) `README.md` file (like this one you're reading), or host web pages for each of your projects. You can upload static HTML files along with your code, or set up a more dynamic blog using the [Jekyll](https://jekyllrb.com/) content management system. (In fact, [codekitchen.club](http://codekitchen.club/) is [hosted on GitHub](https://github.com/codekitchensd/codekitchensd.github.io)!)
 
 We'll look at GitHub, but to get the fundamentals of git, we're going to dive into the command line. 
 
@@ -62,6 +62,7 @@ We'll look at GitHub, but to get the fundamentals of git, we're going to dive in
 - [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans) (a presentation)
 - [Git for Humans](https://abookapart.com/products/git-for-humans) (a different book)
 - [24 Ways - Git for Grownups](https://24ways.org/2013/git-for-grownups/) (on workflows)
+- [Git for Teams](https://github.com/emmajane/gitforteams) (on workflows, a workshop that turned into an O'Reilly book)
 
 ## Let's use Git!
 
@@ -76,10 +77,10 @@ There are lots of tutorials (from videos, to textbooks, to interactive manuals),
 
 #### Getting Started
 
-- `git init` 
-- `git clone`
+- `git init` (if you're starting a new repo on your machine) 
+- `git clone` (if you're copying an existing repo from elsewhere, like github)
 - setting up remote origin
-- `git checkout`
+- `git checkout` 
 
 #### Committing Code
 
@@ -109,11 +110,11 @@ There are lots of tutorials (from videos, to textbooks, to interactive manuals),
 
 ### Resources
 
-- [Try Git](https://try.github.io/)
+- [Try Git](https://try.github.io/) (15 minute interactive walkthrough from GitHub)
 - [Git Guide](https://rogerdudler.github.io/git-guide/) :point_left:
-- [Codecademy Git course](https://www.codecademy.com/learn/learn-git)
-- [Software Carpentry's course](https://swcarpentry.github.io/git-novice/) (for scientists)
-- [Gitignore.io](https://www.gitignore.io/) (for ignoring common system files)
+- [Codecademy Git course](https://www.codecademy.com/learn/learn-git) (another interactive walkthrough)
+- [Software Carpentry's 3-hour workshop](https://swcarpentry.github.io/git-novice/) (free coding tutorials for scientists)
+- [Gitignore.io](https://www.gitignore.io/) (for ignoring common system files, e.g. MacOS resources, )
 - [Oh S#!t, Git](http://ohshitgit.com/) (for fixing problems)
 - [Git LFS](https://git-lfs.github.com/) (for working with large binary files, like PSDs)
 
@@ -129,25 +130,27 @@ There are a lot of things that fall under this title!
 
 ### What do you do for DevOps? 
 
+- Containers! Start by looking into [Docker](https://www.docker.com/), it's probably the most popular system.
 - Try to use tools that are as cross-platform as possible, so that if you have to develop on a different system, you're not introducing new changes in the configuration. (Try to keep things the same as possible!)
 - Use tests more. (Want to learn more about it!)
 - If you have a time-dependent project that is long running, use a cron job to take screenshots throughout the day so that you don't have to watch it throughout the day.
-- Use stable releases of open source libraries.
-- Use submodules.
-- Don't use git for games...or at least not for binary files. It's hard to remove something from your repo! If you accidentally commit a .PSD, it's still in your history even if you delete it, and it's hard to get rid of. If you can serialize things as text, do so. Be aware of the size limit of your repo; unlike SVN or Perforce, git does not do _deltas_ of binary files, nor file-locking (which is also useful for binary files). Git is really popular, but it's not the best for everything. (SVN is simpler for non-coders.)
-- What if you don't want a public git repo site? GitHub is a service that does have private, but it charges. There's also GitLab (which you can install on a server, and it looks a lot like GitHub) and they also have a hosted service, as does BitBucket.
-- Git UI clients: GitHub Desktop app, TortoiseGit, SourceTree, Tower (for Mac), GitKraken, GitGUI?
-- Diff tools: BeyondCompare, TortoiseSVN's diff tool, WinMerge?, Kaleidoscope (for Mac)
-- `gitk` on Mac Terminal command line
+- Use stable releases of open source libraries. (Click on Releases under the Code tab in a repo in GitHub.)
+- Use [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+- Don't use git for games...or at least not for binary files. It's hard to remove something from your repo! If you accidentally commit a .PSD, it's still in your history even if you delete it, and it's hard to get rid of. If you can serialize things as text (to check into git), do so. Be aware of the size limit of your repo; unlike SVN or Perforce, git does not do _deltas_ of binary files, nor file-locking (which is also useful for binary files). Git is really popular, but it's not the best for everything. ([SVN](https://tortoisesvn.net/) is simpler for non-coders, too.)
+- What if you don't want a public git repo site? GitHub is a service that does have private repos, although it charges for private repos. There's also [GitLab](https://about.gitlab.com/) (which you can install on a server, and it looks a lot like GitHub) and they also have a hosted service, as does [BitBucket](https://bitbucket.org/).
+  - Git UI clients that are better than the default [`git-gui`](https://git-scm.com/docs/git-gui): [GitHub Desktop app](https://desktop.github.com/), [TortoiseGit](https://tortoisegit.org/), [SourceTree](https://www.sourcetreeapp.com/):nerdy_face:, [Tower](https://www.git-tower.com/), [GitKraken](https://www.gitkraken.com/):sparkles:
+- Diff tools: [BeyondCompare](http://scootersoftware.com/):sparkles:, [TortoiseSVN's diff tool](https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-diff.html), [WinMerge](http://winmerge.org/), [Kaleidoscope](http://www.kaleidoscopeapp.com/) (for Mac)
+- `gitk` on Mac Terminal command line (is like `git-gui`)
 
 ### Further Resources
 
-- [Looking Inside p5.js](https://vimeo.com/156838703)
-- Getting Started with Development
-- [Periodic Table of DevOps Tools](https://xebialabs.com/periodic-table-of-devops-tools/)
+- [Looking Inside p5.js](https://vimeo.com/156838703) (video that explains basics of DevOps on P5.js open source project)
+- [Getting Started with Development](https://github.com/processing/p5.js/wiki/Development) (P5.js has a wonderful community that encourages newbies to contribute, so their guide has a lot of best practices for getting involved in open source)
+- [Periodic Table of DevOps Tools](https://xebialabs.com/periodic-table-of-devops-tools/) (links to so many other DevOps tools!)
 
 
 
 ## Documenting Your Projects 
 
-_Will we have time to talk about this?_
+_Will we have time to talk about this?_ 
+ANSWER: Nope! _Some other time, perhaps!_
